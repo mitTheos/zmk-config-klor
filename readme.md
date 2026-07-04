@@ -4,7 +4,7 @@
   <img alt="KLOR logo font" src="/docs/images/klor-font-logo-bright.svg">
 </picture>
 
-# ZMK CONFIG FOR THE KLOR SPLIT KEYBOARD
+# ZMK CONFIG FOR THE KLOR SPLIT KEYBOARD altered by theos
 
 [Here](https://github.com/GEIGEIGEIST/qmk-config-klor) you can find the QMK config for the KLOR.\
 [Here](https://github.com/GEIGEIGEIST/klor) you can find the hardware files and build guide.
