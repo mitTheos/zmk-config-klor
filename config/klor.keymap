@@ -38,6 +38,12 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        sc_enc: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            /* bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>; */
+            bindings = <&kp PAGE_UP>, <&kp PAGE_DOWN>;
+    };
 
     };
 
@@ -62,23 +68,25 @@
 label= "BASE"                                                  ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │    Q    │    W    │    F    │    P    │    G    │                    │    J    │    L    │    U    │    Y    │    ;    │   
+             │    Q    │    W    │    F    │    P    │    G    │                    │    J    │    L    │    U    │    Y    │    ;    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │   TAB   │    A    │    R    │    S    │    T    │    D    │                    │    H    │    N    │    E    │    I    │    O    │    "    │
+   │   BSPC  │    A    │    R    │    S    │    T    │    D    │                    │    H    │    N    │    E    │    I    │    O    │   TAB   │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │   BSPC  │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    K    │    M    │    ,    │    .    │    /    │    \    │
-   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │  LOWER  │  SPACE  │    ESC  ││ RETURN  │  LSHIFT │  RAISE  │         │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
+   │   CTRL  │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    K    │    M    │    ,    │    .    │    /    │   ALT   │
+   └─────────┴─────────┴─────────┴─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┴─────────┴─────────┴─────────┘
+                                           │ESC;RAISE│  SPACE  │  LMETA  ││ RETURN  │  RSHIFT │ :;LOWER │
+             ┌─────────┬─────────┬─────────┼─────────┼─────────┼─────────┘└─────────┼─────────┼─────────┼─────────┬─────────┬─────────┐
+             │         │  LM+⬆   │  LM+⬅   │  LM+⬇   │  LM+⮕   │                    │  RM+⮕   │  RM+⬇   │  RM+⬅   │  RM+⬆   │         │
+             └─────────┴─────────┴─────────┴─────────┴─────────┘                    └─────────┴─────────┴─────────┴─────────┴─────────┘*/
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               &kp Q     &kp W     &kp F     &kp P     &kp G                          &kp J     &kp L     &kp U     &kp Y     &kp SEMI
-    &kp TAB   &kp A     &kp R     &kp S     &kp T     &kp D                          &kp H     &kp N     &kp E     &kp I     &kp O     &kp SQT
-    &kp BSPC  &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
-                                            &mo LOWER &kp SPACE &kp ESC    &kp RETURN &kp RSHIFT &mo RAISE
-              &kp N1    &kp N2    &kp N3    &kp N4    &kp N5               &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+    &kp BSPC  &kp A     &kp R     &kp S     &kp T     &kp D                          &kp H     &kp N     &kp E     &kp I     &kp O     &kp TAB
+    &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans   &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp LALT
+                                            &lt RAISE ESC &kp SPACE &kp LMETA    &kp RETURN &kp RSHIFT &lt LOWER COLON
+              &kp LMETA(UP) &kp LMETA(LEFT) &kp LMETA(DOWN) &kp LMETA(RIGHT) &kp N5   &kp RMETA(RIGHT) &kp RMETA(DOWN) &kp RMETA(LEFT) &kp RMETA(UP) &kp N0
                         >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&sc_enc>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -91,9 +99,9 @@ label= "LOWER"                                                 ;
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
              │    1    │    2    │    3    │    4    │    5    │                    │    6    │    7    │    8    │    9    │    0    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │    !    │    @    │    #    │    $    │    %    │                    │    ^    │    &    │    *    │    -    │    =    │    ~    │
+   │         │    !    │    @    │    #    │    $    │    %    │                    │    ^    │    &    │    *    │    -    │    =    │    "    │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │         │    [    │    {    │    (    │         ││        ││        ││         │    )    │    }    │    ]    │         │         │
+   │         │         │    [    │    {    │    (    │         ││        ││        ││         │    )    │    }    │    ]    │    \    │    ~    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │         ││         │         │         │         │
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
@@ -116,21 +124,21 @@ label= "LOWER"                                                 ;
 label= "RAISE"                                                 ;
 // └───────────────────────────────────────────────────────────┘
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │         │         │         │         │         │                    │         │         │    Ü    │         │         │
+             │ LM+ESC  │         │         │  LM+F   │         │                    │         │         │   RM+U  │         │         │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    Ä    │         │    ß    │         │         │         │                    │         │         │         │         │    Ö    │         │
+   │    Ä    │         │    ß    │         │         │  LM+D   │                    │  RM+H   │         │         │         │    Ö    │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
+   │         │         │         │         │  LM+V   │         ││        ││        ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │  ADJUST ││         │         │         │         │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp RA(U) &trans    &trans     
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &kp RA(O) &bt BT_CLR_ALL
-    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
+              &trans    &trans    &trans    &kp LMETA(F) &trans                      &trans    &trans    &kp RMETA(U) &trans &trans     
+    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LMETA(D)                   &kp RMETA(H) &trans &trans   &trans    &kp RA(O) &trans
+    &trans    &trans    &trans    &trans    &kp LMETA(V) &trans    &trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                             &trans    &trans    &mo ADJUST &trans    &trans    &trans
-            &trans    &trans    &trans    &trans    &trans               &trans     &trans    &trans    &trans    &trans    
+              &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans    
                         >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
