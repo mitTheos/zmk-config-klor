@@ -76,7 +76,7 @@ label= "BASE"                                                  ;
    └─────────┴─────────┴─────────┴─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┴─────────┴─────────┴─────────┘
                                            │ESC;RAISE│  SPACE  │  LGUI   ││ RETURN  │  RSHIFT │ :;LOWER │
              ┌─────────┬─────────┬─────────┼─────────┼─────────┼─────────┘└─────────┼─────────┼─────────┼─────────┬─────────┬─────────┐
-             │  LG+⬆   │  LG+⬅   │  LG+⬇   │  LG+⮕   │         │                    │  RG+⮕   │  RG+⬇   │  RG+⬅   │  RG+⬆   │         │
+             │         │  LG+⮕   │  LG+⬇   │  LG+⬅   │  LG+⬆   │                    │  RG+⬆   │  RG+⬅   │  RG+⬇   │  RG+⮕   │         │
              └─────────┴─────────┴─────────┴─────────┴─────────┘                    └─────────┴─────────┴─────────┴─────────┴─────────┘*/
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -84,7 +84,7 @@ label= "BASE"                                                  ;
     &kp BSPC  &kp A     &kp R     &kp S     &kp T     &kp D                          &kp H     &kp N     &kp E     &kp I     &kp O     &kp TAB
     &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans   &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp LALT
                                             &lt RAISE ESC &kp SPACE &kp LMETA    &kp RETURN &kp RSHIFT &lt LOWER COLON
-              &kp LG(UP) &kp LG(LEFT) &kp LG(DOWN) &kp LG(RIGHT) &kp N5   &kp RG(RIGHT) &kp RG(DOWN) &kp RG(LEFT) &kp RG(UP) &kp N0
+              &kp N0 &kp LG(RIGHT) &kp LG(DOWN) &kp LG(LEFT) &kp LG(UP)   &kp RG(UP) &kp RG(LEFT) &kp RG(DOWN) &kp RG(RIGHT) &kp N1
                         >;
             sensor-bindings = <&sc_enc>;
                 };
