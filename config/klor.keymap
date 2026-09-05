@@ -134,9 +134,9 @@ label= "RAISE"                                                 ;
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &kp LMETA(F) &trans                      &trans    &trans    &kp RMETA(U) &trans &trans     
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LMETA(D)                   &kp RMETA(H) &trans &trans   &trans    &kp RA(O) &trans
-    &trans    &trans    &trans    &trans    &kp LMETA(V) &trans    &trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans
+              &trans    &trans    &trans    &kp LG(F) &trans                      &trans    &trans    &kp RG(U) &trans &trans     
+    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &kp LG(D)                   &kp RG(H) &trans &trans   &trans    &kp RA(O) &trans
+    &trans    &trans    &trans    &trans    &kp LG(V) &trans    &trans  &trans    &trans    &trans    &trans    &trans    &trans    &trans
                                             &trans    &trans    &mo ADJUST &trans    &trans    &trans
               &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans    
                         >;
