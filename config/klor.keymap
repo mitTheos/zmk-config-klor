@@ -99,17 +99,17 @@ label= "LOWER"                                                 ;
 /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
              │    1    │    2    │    3    │    4    │    5    │                    │    6    │    7    │    8    │    9    │    0    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │    !    │    @    │    #    │    $    │    %    │                    │    ^    │    &    │    *    │    -    │    =    │    "    │
+   │    '    │    !    │    @    │    #    │    $    │    %    │                    │    ^    │    &    │    *    │    -    │    _    │    "    │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │         │    [    │    {    │    (    │         ││        ││        ││         │    )    │    }    │    ]    │    \    │    ~    │
+   │    \    │         │    [    │    {    │    (    │         ││        ││        ││    =    │    )    │    }    │    ]    │    \    │    ~    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │         ││         │         │         │         │
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
             &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-    &trans  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR &kp PERCENT                   &kp CARET &kp AMPS  &kp STAR  &kp KP_MINUS &kp KP_EQUAL &kp GRAVE
-    &trans  &trans    &kp LBKT  &kp LBRC  &kp LPAR  &trans    &trans     &trans    &trans    &kp RPAR  &kp RBRC  &kp RBKT  &trans    &trans
+    &kp APOS &kp EXCL &kp AT    &kp HASH  &kp DOLLAR &kp PERCENT                   &kp CARET &kp AMPS  &kp STAR  &kp KP_MINUS &kp UNDER  &kp DQT
+    &kp GRAVE &trans  &kp LBKT  &kp LBRC  &kp LPAR  &trans    &trans     &trans    &kp KP_EQUAL &kp RPAR  &kp RBRC  &kp RBKT  &kp BSLH   &kp TILDE
                                           &trans    &trans    &trans     &trans    &trans    &trans
             &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans
                         >;
