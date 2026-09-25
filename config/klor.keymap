@@ -84,7 +84,7 @@ label= "BASE"                                                  ;
     &kp BSPC  &kp A     &kp R     &kp S     &kp T     &kp D                          &kp H     &kp N     &kp E     &kp I     &kp O     &kp TAB
     &kp LCTRL  &kp Z     &kp X     &kp C    &kp V     &kp B     &trans     &trans   &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
                                             &kp SPACE &lt RAISE ESC &kp LMETA    &kp RETURN &lt LOWER COLON &kp RSHIFT 
-              &kp N0 &kp LG(RIGHT) &kp LG(DOWN) &kp LG(LEFT) &kp LG(UP)   &kp UP &kp LEFT &kp DOWN &kp RIGHT &kp LALT
+              &LG(ESC) &kp LG(RIGHT) &kp LG(DOWN) &kp LG(LEFT) &kp LG(UP)   &kp UP &kp LEFT &kp DOWN &kp RIGHT &kp LALT
                         >;
             sensor-bindings = <&sc_enc>;
                 };
