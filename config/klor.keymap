@@ -19,6 +19,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/rgb.h>
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15 // default is 10
 #include <dt-bindings/zmk/pointing.h>
 
 
@@ -39,10 +40,14 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        sc_enc: scroll_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <24>; // match your encoder's detents
+    };
+    &msc {
+        time-to-max-speed-ms = <0>;   // no ramp — full velocity immediately
+        acceleration-exponent = <0>;  // linear, no exponential curve
     };
 
     };
@@ -86,7 +91,7 @@ label= "BASE"                                                  ;
                                             &lt RAISE ESC &kp SPACE &kp LMETA    &kp RETURN &kp RSHIFT &lt LOWER COLON
               &kp LG(ESC) &kp LG(RIGHT) &kp LG(DOWN) &kp LG(LEFT) &kp LG(UP)   &kp UP &kp LEFT &kp DOWN &kp RIGHT &kp LALT
                         >;
-            sensor-bindings = <&sc_enc>;
+            sensor-bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
                 };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
