@@ -146,7 +146,7 @@ label= "RAISE"                                                 ;
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │  ADJUST ││         │         │         │         │  
              ┌─────────┬─────────┬─────────┼─────────┼─────────┼─────────┘└─────────┼─────────┼─────────┼─────────┬─────────┬─────────┐
-             │         │         │         │         │         │                    │         │         │         │         │         │
+             │         │         │         │         │         │                    │         │         │         │  PRSCN  │         │
              └─────────┴─────────┴─────────┴─────────┴─────────┘                    └─────────┴─────────┴─────────┴─────────┴─────────┘*/
  bindings = <
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
@@ -154,7 +154,7 @@ label= "RAISE"                                                 ;
     &trans    &trans    &kp LBKT  &kp LBRC  &kp LPAR  &kp PLUS                      &kp KP_EQUAL &kp RPAR  &kp RBRC  &kp RBKT  &kp F11  &trans
     &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &kp F12  &trans
                                             &trans    &trans    &mo ADJUST &trans    &trans    &trans
-              &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans    
+              &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &kp PRSCN    &trans    
                         >;
             sensor-bindings = <&sc_enc>;
                 };
