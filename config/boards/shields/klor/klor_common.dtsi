@@ -25,6 +25,7 @@
 		label = "LEFT_ENCODER";
 		resolution = <4>;
 		status = "disabled";
+		steps = <15>;
 	};
 
 	right_encoder: encoder_right {
@@ -32,6 +33,7 @@
 		label = "RIGHT_ENCODER";
 		resolution = <4>;
 		status = "disabled";
+		steps = <15>;
 	};
 
 	sensors {
