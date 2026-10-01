@@ -129,7 +129,7 @@ label= "LOWER"                                                 ;
             &mo QWERTY    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans
                         >;
             sensor-bindings = <&sc_enc>;
-                };
+        };
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
@@ -213,7 +213,5 @@ label= "QWERTY"                                                ;
             &trans    &trans    &trans    &trans    &trans               &trans    &bt BT_PRV &trans   &bt BT_NXT &trans
                         >;
             sensor-bindings = <&sc_enc>;
-                };
         };
-
 };
