@@ -125,7 +125,7 @@ label= "LOWER"                                                 ;
     &kp APOS &kp EXCL &kp AT    &kp HASH  &kp DOLLAR &kp PERCENT                   &kp CARET &kp AMPS  &kp STAR  &kp KP_MINUS &kp UNDER  &kp DQT
     &trans  &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans      &kp TILDE
                                           &trans    &trans    &trans     &trans    &trans    &trans
-            &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans
+            &lt QWERTY    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans
                         >;
             sensor-bindings = <&sc_enc>;
                 };
