@@ -49,12 +49,12 @@
         sc_enc: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp A>, <&kp B>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
         sensors: sensors {
             compatible = "zmk,keymap-sensors";
             sensors = <&left_encoder>;
-            triggers-per-rotation = <24>; // match your encoder's detents
+            triggers-per-rotation = <30>; // match your encoder's detents
         };
 
 
