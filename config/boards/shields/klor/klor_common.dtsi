@@ -25,7 +25,7 @@
 		label = "LEFT_ENCODER";
 		resolution = <4>;
 		status = "disabled";
-		steps = <15>;
+		steps = <15>; //match your encoders pulse
 	};
 
 	right_encoder: encoder_right {
@@ -33,12 +33,13 @@
 		label = "RIGHT_ENCODER";
 		resolution = <4>;
 		status = "disabled";
-		steps = <15>;
+		steps = <15>; //match your encoders pulse
 	};
 
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
+		triggers-per-rotation = <30>; // match your encoders detents
 	};
 };
 &spi0 { status = "disabled"; };

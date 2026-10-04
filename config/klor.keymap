@@ -36,27 +36,20 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+        /* hm: homerow_mods { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     label = "HOMEROW_MODS"; */
+        /*     #binding-cells = <2>; */
+        /*     tapping-term-ms = <150>; */
+        /*     quick_tap_ms = <0>; */
+        /*     flavor = "tap-preferred"; */
+        /*     bindings = <&kp>, <&kp>; */
+        /* }; */
         sc_enc: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
-        sensors: sensors {
-            compatible = "zmk,keymap-sensors";
-            sensors = <&left_encoder>;
-            triggers-per-rotation = <30>; // match your encoder's detents
-        };
-
-
 
     };
 
@@ -68,7 +61,6 @@
                 bindings = <&kp ESC>;
             };
     };
-
 
 
         keymap {
