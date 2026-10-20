@@ -36,7 +36,7 @@
 		steps = <15>; //match your encoders pulse
 	};
 
-	sensors {
+	sensors: sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
 		triggers-per-rotation = <30>; // match your encoders detents
