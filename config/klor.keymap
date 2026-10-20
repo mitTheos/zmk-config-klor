@@ -118,7 +118,7 @@ label= "LOWER"                                                 ;
     &kp APOS &kp EXCL &kp AT    &kp HASH  &kp DOLLAR &kp PERCENT                   &kp CARET &kp AMPS  &kp STAR  &kp KP_MINUS &kp UNDER  &kp DQT
     &trans  &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans      &kp TILDE
                                           &trans    &trans    &trans     &trans    &trans    &trans
-            &mo QWERTY    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans
+            &tog QWERTY    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans
                         >;
             sensor-bindings = <&sc_enc>;
         };
@@ -147,7 +147,7 @@ label= "RAISE"                                                 ;
     &trans    &trans    &kp LBKT  &kp LBRC  &kp LPAR  &kp PLUS                      &kp KP_EQUAL &kp RPAR  &kp RBRC  &kp RBKT  &kp F11  &trans
     &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &kp F12  &trans
                                             &trans    &trans    &mo ADJUST &trans    &trans    &trans
-              &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &kp PSCRN    &trans    
+              &trans    &trans    &trans    &trans    &trans               &trans    &trans    &trans    &mo umlaut   &kp PSCRN
                         >;
             sensor-bindings = <&sc_enc>;
                 };
@@ -181,6 +181,40 @@ label= "ADJUST"                                                ;
             sensor-bindings = <&sc_enc>;
                 };
         };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+        umlaut_layer{
+// ┌───────────────────────────────────────────────────────────┐
+label= "UMLAUT"                                                ;
+// └───────────────────────────────────────────────────────────┘
+/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │         │         │stud_unlk│  bt_clr │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │         │         │         │         │                    │         │         │         │         │         │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │         │         ││         │         │         │         │  
+             ┌─────────┬─────────┬─────────┼─────────┼─────────┼─────────┘└─────────┼─────────┼─────────┼─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │ bt_prev │         │ bt_next │         │
+             └─────────┴─────────┴─────────┴─────────┴─────────┘                    └─────────┴─────────┴─────────┴─────────┴─────────┘*/
+ bindings = <
+ //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
+             &trans   &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans
+    &trans   &trans   &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &trans   &trans
+    &trans   &trans   &trans    &trans    &trans    &trans      &trans     &trans  &trans    &trans    &trans    &trans    &trans   &trans
+                                          &trans    &trans      &trans     &trans  &trans    &trans
+            &trans    &trans    &trans    &trans    &trans                 &trans  &trans    &trans    &trans    &trans
+                        >;
+            sensor-bindings = <&sc_enc>;
+                };
+        };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
                         qwerty_layer {
 // ┌───────────────────────────────────────────────────────────┐
 label= "QWERTY"                                                ;
